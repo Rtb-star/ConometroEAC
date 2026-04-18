@@ -1,5 +1,5 @@
-    // ==========================================
-    // LÓGICA DO CRONÔMETRO ORIGINAL
+// ==========================================
+    // LÓGICA DO CRONÔMETRO
     // ==========================================
     const dataFinal = new Date("2026-08-01T07:00:00-03:00").getTime();
 
@@ -26,30 +26,21 @@
     // ==========================================
     // LÓGICA DOS CORAÇÕES SUBINDO
     // ==========================================
-    const emojisCoracao = ['❤️', '💛', '💚', '💙', '🤎']; // Cores do seu EAC
+    const emojisCoracao = ['❤️', '💛', '💚', '💙', '🤎'];
 
     function criarCoracao() {
       const coracao = document.createElement('div');
       coracao.classList.add('coracao-animado');
-      
-      // Escolhe uma cor aleatória da nossa lista
       coracao.innerText = emojisCoracao[Math.floor(Math.random() * emojisCoracao.length)];
-      
-      // Posição horizontal aleatória na tela (0 a 100 da largura)
       coracao.style.left = Math.random() * 100 + 'vw';
-      
-      // Duração da animação aleatória (entre 3 e 6 segundos)
       coracao.style.animationDuration = (Math.random() * 3 + 3) + 's';
       
       document.body.appendChild(coracao);
       
-      // Remove o coração da memória do navegador depois de terminar a animação
       setTimeout(() => {
         coracao.remove();
       }, 6000);
     }
-
-    // Cria um novo coração a cada 500 milissegundos
     setInterval(criarCoracao, 500);
 
     // ==========================================
@@ -60,17 +51,11 @@
       const imgModal = document.getElementById("img-modal");
       const textoModal = document.getElementById("texto-modal");
       
-      // Pega a imagem de dentro da div clicada
       const imgClicada = elementoFoto.querySelector("img");
-      
-      // Pega o texto configurado pelo desenvolvedor no data-mensagem
       const mensagem = elementoFoto.getAttribute("data-mensagem");
       
-      // Atualiza a foto e o texto grande
       imgModal.src = imgClicada.src;
       textoModal.innerText = mensagem;
-      
-      // Exibe o modal
       modal.style.display = "flex";
     }
 
