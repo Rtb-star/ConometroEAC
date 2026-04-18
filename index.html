@@ -11,6 +11,7 @@
 
 <body>
 
+
   <div id="container">
     <!-- SEÇÃO DO CONTADOR -->
     <div id="topo">Faltam:</div>
@@ -32,44 +33,74 @@
 
     <!-- SEÇÃO DE FOTOS -->
     <div id="secao-fotos">
-      <h2>A tropa do EAC</h2>
+      <h2>Momentos Especiais</h2>
       <p style="font-family: sans-serif; font-size: 0.8rem; opacity: 0.8; margin-bottom: 20px;">
-        
+        (Clique em uma foto para ver em tela cheia)
       </p>
       
-      <!-- FOTO MAIOR E CENTRALIZADA (DESTAQUE) -->
-      <!-- Adicione a mensagem desejada no atributo data-mensagem="" -->
-      <div class="foto-wrapper wrapper-destaque" onclick="abrirModal(this)" data-mensagem="UUUUUU EEEAACCCC">
-        <img src="fotos/geral3.jpg" alt="Foto Destaque">
+      <!-- FOTOS MAIORES E CENTRALIZADAS (DESTAQUES) -->
+      <div class="destaques-container">
+        <!-- Primeira Foto Destaque -->
+        <div class="foto-wrapper wrapper-destaque" onclick="abrirModal(this)" data-mensagem="Esta é a nossa primeira foto principal!">
+          <img src="https://placehold.co/600x400/5a1b1b/FFF?text=Foto+Destaque+1" alt="Foto Destaque 1">
+        </div>
+        
+        <!-- Segunda Foto Destaque (NOVA) -->
+        <div class="foto-wrapper wrapper-destaque" onclick="abrirModal(this)" data-mensagem="E aqui está o nosso segundo momento incrível!">
+          <img src="https://placehold.co/600x400/5a1b1b/FFF?text=Foto+Destaque+2" alt="Foto Destaque 2">
+        </div>
       </div>
       
       <!-- OUTRAS FOTOS (GALERIA) -->
       <div class="galeria">
-        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Melhor Círculo!">
-          <img src="fotos/Vermelhooo.jpg" alt="Foto 1">
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Lembrança especial número 1.">
+          <img src="https://placehold.co/800x800/5a1b1b/FFF?text=Foto+1" alt="Foto 1">
         </div>
 
-        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Cículo Verde">
-          <img src="fotos/verde.jpg" alt="Foto 2">
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Lembrança especial número 2.">
+          <img src="https://placehold.co/800x800/5a1b1b/FFF?text=Foto+2" alt="Foto 2">
         </div>
 
-        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Círculo Azul">
-          <img src="fotos/azul.jpg" alt="Foto 3">
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Lembrança especial número 3.">
+          <img src="https://placehold.co/800x800/5a1b1b/FFF?text=Foto+3" alt="Foto 3">
         </div>
 
-        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Círculo Amarelo">
-          <img src="fotos/amarelo.jpg" alt="Foto 4">
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Lembrança especial número 4.">
+          <img src="https://placehold.co/800x800/5a1b1b/FFF?text=Foto+4" alt="Foto 4">
         </div>
 
-        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Círculo 💩">
-          <img src="fotos/marrom.jpg" alt="Foto 5">
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Lembrança especial número 5.">
+          <img src="https://placehold.co/800x800/5a1b1b/FFF?text=Foto+5" alt="Foto 5">
         </div>
       </div>
     </div>
 
+    <!-- SEÇÃO DE DESENVOLVEDORES -->
+    <div id="desenvolvedores">
+      <h2>Desenvolvido por:</h2>
+      <div class="devs-container">
+        
+        <!-- DEV 1 -->
+        <div class="dev-card">
+          <img src="https://placehold.co/200x200/5a1b1b/FFF?text=Dev+1" alt="Foto Dev 1">
+          <h3>Nome do Dev 1</h3>
+          <p>Programador / Criador</p>
+        </div>
+
+        <!-- DEV 2 -->
+        <div class="dev-card">
+          <img src="https://placehold.co/200x200/5a1b1b/FFF?text=Dev+2" alt="Foto Dev 2">
+          <h3>Nome do Dev 2</h3>
+          <p>Programador / Criador</p>
+        </div>
+
+      </div>
+    </div>
+    <!-- FIM DA SEÇÃO DE DESENVOLVEDORES -->
+
   </div>
 
-  <!-- MODAL DE TELA CHEIA (Fica escondido até clicar) -->
+  <!-- MODAL DE TELA CHEIA -->
   <div id="modal" onclick="fecharModal()">
     <span class="fechar-modal">&times;</span>
     <img id="img-modal" src="" alt="Foto expandida" onclick="event.stopPropagation()">
