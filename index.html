@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contagem Regressiva</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="container">
+    <!-- SEÇÃO DO CONTADOR -->
+    <div id="topo">Faltam:</div>
+    
+    <div id="contador">
+      <div class="bloco"><span class="numero" id="dias">00</span><span class="label">dias</span></div>
+      <div class="bloco"><span class="numero" id="horas">00</span><span class="label">horas</span></div>
+      <div class="bloco"><span class="numero" id="minutos">00</span><span class="label">minutos</span></div>
+      <div class="bloco"><span class="numero" id="segundos">00</span><span class="label">segundos</span></div>
+    </div>
+    
+    <div id="baixo">Para O XXX EAC Catedral!</div>
+    <div id="data">(01 De Agosto De 2026, Às 07:00)</div>
+    <div id="emoji">❤️💛💚💙🤎</div>
+    <div id="baixo">Melhores Circulos:</div>
+    <div id="baixo">top 1 ❤️</div>
+    <div id="baixo">top 2 💚</div>
+    <div id="baixo">top 3 💛💙🤎</div>
+
+    <!-- SEÇÃO DE FOTOS -->
+    <div id="secao-fotos">
+      <h2>A tropa do EAC</h2>
+      <p style="font-family: sans-serif; font-size: 0.8rem; opacity: 0.8; margin-bottom: 20px;">
+        
+      </p>
+      
+      <!-- FOTO MAIOR E CENTRALIZADA (DESTAQUE) -->
+      <!-- Adicione a mensagem desejada no atributo data-mensagem="" -->
+      <div class="foto-wrapper wrapper-destaque" onclick="abrirModal(this)" data-mensagem="UUUUUU EEEAACCCC">
+        <img src="fotos/geral3.jpg" alt="Foto Destaque">
+      </div>
+      
+      <!-- OUTRAS FOTOS (GALERIA) -->
+      <div class="galeria">
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Melhor Círculo!">
+          <img src="fotos/melhor circulo.jpg" alt="Foto 1">
+        </div>
+
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Cículo Verde">
+          <img src="fotos/verde.jpg" alt="Foto 2">
+        </div>
+
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Círculo Azul">
+          <img src="fotos/azul.jpg" alt="Foto 3">
+        </div>
+
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Círculo Amarelo">
+          <img src="fotos/amarelo.jpg" alt="Foto 4">
+        </div>
+
+        <div class="foto-wrapper wrapper-menor" onclick="abrirModal(this)" data-mensagem="Círculo 💩">
+          <img src="fotos/marrom.jpg" alt="Foto 5">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL DE TELA CHEIA (Fica escondido até clicar) -->
+  <div id="modal" onclick="fecharModal()">
+    <span class="fechar-modal">&times;</span>
+    <img id="img-modal" src="" alt="Foto expandida" onclick="event.stopPropagation()">
+    <div id="texto-modal"></div>
+  </div>
+
+<script src="js.js"></script>
+</body>
+</html>

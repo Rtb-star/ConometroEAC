@@ -1,0 +1,240 @@
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 0; 
+      background: #7a2727;
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+
+    #container {
+      text-align: center;
+      width: 90%;
+      max-width: 800px;
+      z-index: 1;
+      position: relative;
+    }
+
+    #topo {
+      font-size: 1.2rem;
+      opacity: 0.7;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    #contador {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+
+    .bloco {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .numero {
+      font-size: 3.5rem;
+    }
+
+    .label {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    #baixo {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    #data {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-top: 5px;
+    }
+
+    #emoji {
+      margin-top: 8px;
+      font-size: 1.3rem;
+    }
+
+    /* =========================================
+       SEÇÃO DE FOTOS ATUALIZADA
+       ========================================= */
+    #secao-fotos {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #secao-fotos h2 {
+      margin-bottom: 25px;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    /* CONTAINER DAS FOTOS */
+    .foto-wrapper {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden; 
+      display: inline-block;
+    }
+
+    /* =========================================
+       MODAL (TELA CHEIA)
+       ========================================= */
+    #modal {
+      display: none; 
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer; /* Adicionado para indicar que pode clicar no fundo para fechar */
+    }
+
+    #modal img {
+      max-width: 95vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+      object-fit: contain;
+      cursor: default;
+    }
+
+    #texto-modal {
+      margin-top: 20px;
+      font-family: sans-serif;
+      font-size: 1.2rem;
+      color: #fff;
+      text-align: center;
+      max-width: 90%;
+      padding: 0 20px;
+    }
+
+    .fechar-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* FOTO GRANDE E CENTRALIZADA */
+    .wrapper-destaque {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      margin: 0 auto 30px auto;
+      border: 3px solid rgba(255,255,255,0.1);
+      display: block;
+    }
+
+    .wrapper-destaque img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* GALERIA DE FOTOS MENORES */
+    .galeria {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .wrapper-menor {
+      width: calc(33.333% - 15px);
+      max-width: 200px;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .wrapper-menor:hover {
+      transform: scale(1.05);
+      z-index: 2; /* Garante que ela fique por cima ao dar zoom */
+    }
+
+    .wrapper-menor img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* =========================================
+       ANIMAÇÃO DOS CORAÇÕES
+       ========================================= */
+    .coracao-animado {
+      position: fixed;
+      bottom: -30px;
+      font-size: 1.5rem;
+      pointer-events: none;
+      z-index: 0;
+      animation: subir linear forwards;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    /* 📱 MODO CELULAR */
+    @media (max-width: 600px) {
+      #topo { font-size: 1.5rem; }
+      .numero { font-size: 3.2rem; }
+      .label { font-size: 0.8rem; }
+      
+      #contador {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 10px;
+      }
+      
+      .bloco:nth-child(1) { grid-column: 1; grid-row: 1; }
+      .bloco:nth-child(2) { grid-column: 2; grid-row: 1; }
+      .bloco:nth-child(3) { grid-column: 1; grid-row: 2; }
+      .bloco:nth-child(4) { grid-column: 2; grid-row: 2; }
+
+      #baixo { font-size: 1.2rem; }
+      #data { font-size: 1rem; }
+      #emoji { font-size: 1.5rem; }
+
+      /* Ajustes das fotos no celular */
+      .wrapper-menor {
+        width: calc(50% - 10px); /* 2 fotos por linha no celular */
+      }
+    }
